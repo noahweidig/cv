@@ -33,6 +33,7 @@
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{calc}
+\usepackage{needspace}
 
 %% ── Section formatting ────────────────────────────────────────────────────────
 \titleformat{\section}
@@ -210,8 +211,8 @@
 << endif >>
 
 %% ── Awards & Honors ───────────────────────────────────────────────────────────
+\needspace{5\baselineskip}
 \section{Awards \& Honors}
-\nopagebreak
 \begin{tabular}{@{}>{\small\color{muted}}r@{\hspace{0.8em}}p{\linewidth - 2.4cm}@{}}
 << for aw in me.awards >>
   <{ aw.date[:4] if aw.date is defined else '' }> &
