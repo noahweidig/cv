@@ -230,7 +230,7 @@
 
 <<- if me.skills is defined >>
 <<- for cat in me.skills >>
-\textbf{<{ cat.name | tex }>:} {\small\color{mid} <{ cat.items | map(attribute='label') | join(', ') | tex }>}\\
+\textbf{<{ cat.name | tex }>:} {\small\color{mid} <{ cat['items'] | map(attribute='label') | join(', ') | tex }>}\\
 <<- endfor >>
 <<- endif >>
 
