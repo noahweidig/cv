@@ -1,0 +1,422 @@
+%% Noah C. Weidig — Curriculum Vitae
+%% Auto-generated 2026-05-28  •  do not edit by hand
+\documentclass[10pt,letterpaper]{article}
+
+%% ── Page geometry ─────────────────────────────────────────────────────────────
+\usepackage[top=0.80in, bottom=0.80in, left=0.90in, right=0.90in]{geometry}
+
+%% ── Fonts (XeLaTeX) ───────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+
+%% ── Colors ────────────────────────────────────────────────────────────────────
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1a6b5a}
+\definecolor{dark}{HTML}{1e1e1e}
+\definecolor{mid}{HTML}{444444}
+\definecolor{muted}{HTML}{777777}
+
+%% ── Hyperlinks ────────────────────────────────────────────────────────────────
+\usepackage[colorlinks=true, urlcolor=accent, linkcolor=accent, hidelinks]{hyperref}
+
+%% ── Core packages ─────────────────────────────────────────────────────────────
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{hanging}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{calc}
+
+%% ── Section formatting ────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\normalsize\bfseries\sffamily\color{accent}\ls{60}}
+  {}{0pt}{\MakeUppercase}
+  [{\vspace{1pt}\color{accent}\hrule height 0.5pt\vspace{5pt}}]
+\titlespacing*{\section}{0pt}{16pt}{4pt}
+
+%% Letter-spacing helper (requires microtype)
+\newcommand{\ls}[1]{\addfontfeature{LetterSpace=#1}}
+
+%% ── List settings ─────────────────────────────────────────────────────────────
+\setlist{nosep, leftmargin=1.4em, topsep=2pt}
+
+%% ── Misc helpers ──────────────────────────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+%% Date range helper: prints "Start -- End" or "Start -- present"
+\newcommand{\daterange}[2]{%
+  \textcolor{muted}{\small #1\ifx&#2&\relax\else{} -- #2\fi}%
+}
+
+%% Entry heading macro
+%  #1 = bold title   #2 = organisation   #3 = date range   #4 = location
+\newcommand{\entryhead}[4]{%
+  {\textbf{#1}}\enspace\textcolor{mid}{#2}%
+  \hfill\daterange{#3}{#4}%
+}
+
+%% Publication entry (hanging indent)
+\newenvironment{pubitem}{%
+  \begin{hangparas}{1.2em}{1}%
+  \setlength{\parskip}{3pt}%
+}{\end{hangparas}\medskip}
+
+%% ═══════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+%% ── Header ────────────────────────────────────────────────────────────────────
+\begin{center}
+  {\fontsize{26}{30}\selectfont\bfseries\sffamily\color{dark}
+    Noah \textcolor{accent}{Weidig}}
+
+  \smallskip
+  {\color{mid}\sffamily GIS Analyst • Data Scientist}
+
+  \smallskip
+  {\small\color{mid}
+    \href{mailto:noah@noahweidig.com}{noah@noahweidig.com}%
+\enspace\textcolor{muted}{|}
+    \enspace\href{https://www.linkedin.com/in/noahweidig/}{\textcolor{muted}{\footnotesize linkedin.com/in/noahweidig/}}%
+\enspace\textcolor{muted}{|}
+    \enspace\href{https://github.com/noahweidig/}{\textcolor{muted}{\footnotesize github.com/noahweidig/}}%
+\enspace\textcolor{muted}{|}
+    \enspace\href{https://scholar.google.com/citations?hl=en&user=Ml95eTwAAAAJ}{\textcolor{muted}{\footnotesize scholar.google.com/citations?hl=en\&user…}}%
+\enspace\textcolor{muted}{|}
+    \enspace\href{https://orcid.org/0000-0003-1205-3209}{\textcolor{muted}{\footnotesize orcid.org/0000-0003-1205-3209}}%
+}
+
+\end{center}
+
+\vspace{4pt}
+\noindent{\color{accent!30}\hrule height 1pt}
+\vspace{10pt}
+
+%% ── Education ─────────────────────────────────────────────────────────────────
+\section{Education}
+
+
+\entryhead%
+  {Master of Science, Forest Resources \& Conservation}%
+  {\textnormal{\textcolor{mid}{--- University of Florida}}}%
+  {Aug 2023}%
+  {Aug 2025}\\
+\textcolor{mid}{\small Thesis: Large Wildfire Patterns in the WUI, 4.0 GPA}
+
+\medskip
+
+\entryhead%
+  {Bachelor of Science, Biological Sciences}%
+  {\textnormal{\textcolor{mid}{--- Northern Kentucky University}}}%
+  {Aug 2018}%
+  {May 2022}\\
+\textcolor{mid}{\small Ecology, Evolution, \& Organismal Track, 4.0 GPA}
+
+\medskip
+
+
+%% ── Experience ────────────────────────────────────────────────────────────────
+\section{Research \& Professional Experience}
+
+
+\entryhead%
+  {GIS \& Remote Sensing Research Associate}%
+  {\textnormal{\textcolor{mid}{--- University of Florida}}}%
+  {Aug 2025}%
+  {}\\
+\textcolor{mid}{\small Led GIS-based analysis assessing spatial patterns and land-use impacts on community and regional risk management.}
+
+\medskip
+
+\entryhead%
+  {Graduate Research Assistant}%
+  {\textnormal{\textcolor{mid}{--- University of Florida}}}%
+  {Aug 2023}%
+  {Aug 2025}\\
+\textcolor{mid}{\small Conducted geospatial analysis to support wildland-urban interface and emergency management decision-making.}
+
+\medskip
+
+\entryhead%
+  {Research Assistant Intern}%
+  {\textnormal{\textcolor{mid}{--- USDA Agricultural Research Service}}}%
+  {May 2023}%
+  {Aug 2023}\\
+\textcolor{mid}{\small Collected, cleaned, and validated spatial datasets to support GIS-based risk assessment and land-use planning.}
+
+\medskip
+
+\entryhead%
+  {Fire \& Recreation Intern}%
+  {\textnormal{\textcolor{mid}{--- Student Conservation Association/US Forest Service}}}%
+  {Jan 2023}%
+  {May 2023}\\
+\textcolor{mid}{\small Applied GIS to support spatial planning and risk assessment for land management projects.}
+
+\medskip
+
+\entryhead%
+  {Research Assistant}%
+  {\textnormal{\textcolor{mid}{--- University of Cincinnati}}}%
+  {May 2022}%
+  {Jan 2023}\\
+\textcolor{mid}{\small Conducted quantitative data analysis for biomedical research using advanced statistical modeling and visualization.}
+
+\medskip
+
+\entryhead%
+  {CAD Design Specialist}%
+  {\textnormal{\textcolor{mid}{--- Garage Living}}}%
+  {Sep 2021}%
+  {Jun 2022}\\
+\textcolor{mid}{\small Developed CAD drawings and project plans for residential remodeling projects.}
+
+\medskip
+
+\entryhead%
+  {Research Assistant}%
+  {\textnormal{\textcolor{mid}{--- Northern Kentucky University}}}%
+  {Feb 2020}%
+  {May 2022}\\
+\textcolor{mid}{\small Collected, organized, and analyzed complex ecological datasets using spatial and statistical methods.}
+
+\medskip
+
+\entryhead%
+  {Elections Data Specialist}%
+  {\textnormal{\textcolor{mid}{--- Boone County Clerk's Office}}}%
+  {Aug 2017}%
+  {Feb 2020}\\
+\textcolor{mid}{\small Managed and analyzed precinct-level GIS data for voter registration and electoral planning.}
+
+\medskip
+
+
+%% ── Publications ──────────────────────────────────────────────────────────────
+\section{Publications \& Presentations}
+
+
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Peer-Reviewed Journal Articles}}
+\vspace{2pt}
+
+\begin{pubitem}
+Ivey, M.A., \textbf{Weidig, N.C.}, Ivory II, A.A., Donovan, V.M. (2026). Regional differences in infilling and land-use conversion characterize woody cover increases across the Eastern United States. \textit{Forest Ecology and Management}, \textit{603}, 123446. \href{https://doi.org/10.1016/j.foreco.2025.123446}{\textcolor{accent}{\small doi:10.1016/j.foreco.2025.123446}}
+\end{pubitem}
+
+\begin{pubitem}
+Ivey, M.A., Wonkka, C.L., \textbf{Weidig, N.C.}, Donovan, V.M. (2024). Woody cover fuels large wildfire risk in the eastern US. \textit{Geophysical Research Letters}, \textit{51}(e2024GL110586). \href{https://doi.org/10.1029/2024GL110586}{\textcolor{accent}{\small doi:10.1029/2024GL110586}}
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Wonkka, C.L., Ivey, M.A., Donovan, V.M. (2024). Changing large wildfire dynamics in the wildland–urban interface of the eastern United States. \textit{International Journal of Wildland Fire}, \textit{33}(12). \href{https://doi.org/10.1071/WF24110}{\textcolor{accent}{\small doi:10.1071/WF24110}}
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Miller, A.L., Parker, A.T. (2022). The Goldilocks principle: Finding the balance between water volume and nutrients for ovipositing Culex mosquitoes (Diptera: Culicidae). \textit{PLOS ONE}, \textit{17}(11), e0277237. \href{https://doi.org/10.1371/journal.pone.0277237}{\textcolor{accent}{\small doi:10.1371/journal.pone.0277237}}
+\end{pubitem}
+
+
+
+
+
+
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Theses}}
+\vspace{2pt}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.} (2025). \textit{Patterns and drivers of large wildfires within and surrounding the wildland-urban interface of the eastern United States}.
+\end{pubitem}
+
+
+
+
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Conference Papers \& Presentations}}
+\vspace{2pt}
+
+\begin{pubitem}
+Ivory II, A.A., Brock, K.M., Johnson, S.A., \textbf{Weidig, N.C.}, Hallett, M.T., Acevedo, M.A., Scheffers, B.R. (2025). Southeastern Myotis (Myotis austroriparius) Use of Stormwater Sewer Systems. \textit{Florida Bat Working Group Annual Meeting; Southeastern Bat Diversity Network}.
+\end{pubitem}
+
+\begin{pubitem}
+Ivey, M.A., \textbf{Weidig, N.C.}, Ivory II, A.A., Donovan, V.M. (2025). Woody cover increases linked to forest infilling and land conversion in the eastern United States. \textit{International Association for Landscape Ecology - North America Annual Conference}. \href{https://www.ialena.org/uploads/9/4/8/2/94821076/iale_program_handout_final.pdf}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Donovan, V.M., Crandall, R.M., Fill, J.M., Ivey, M.A., Ivory II, A.A., \textbf{Weidig, N.C.}, Wonkka, C.L. (2025). Unravelling changing wildfire regime dynamics in the eastern United States. \textit{Auburn University College of Forest, Wildlife and Environment Invited Seminar}.
+\end{pubitem}
+
+\begin{pubitem}
+Alexander, H.D., Donovan, V.M., Lamounier Moura, A., Lazzaro, L.G., \textbf{Weidig, N.C.}, Ivey, M.A. (2025). Shifting forest structure and composition following decades of fire exclusion in the eastern U.S.: Implications for prescribed fire restoration and wildfires. \textit{Proceedings of the 4th fire ecology and management symposium (FES-412)}.
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Wonkka, C.L., Ivey, M.A., Johnson, D.J., Donovan, V.M. (2025). Fire at the fringe: Drivers of large wildfires in and near the wildland-urban interface of the eastern United States. \textit{International Association for Landscape Ecology - North America Annual Conference}. \href{https://www.ialena.org/uploads/9/4/8/2/94821076/iale_program_handout_final.pdf}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Donovan, V.M., \textbf{Weidig, N.C.}, Ivey, M.A., Crandall, R.M., Fill, J.M., Wonkka, C.L. (2025). Unravelling changing wildfire regime dynamics in the eastern United States. \textit{International Association for Landscape Ecology - North America Annual Conference}. \href{https://www.ialena.org/uploads/9/4/8/2/94821076/iale_program_handout_final.pdf}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Donovan, V.M., \textbf{Weidig, N.C.}, Ivey, M.A., Crandall, R.M., Fill, J.M., Wonkka, C.L. (2025). Changing large wildfire regime dynamics in the eastern United States. \textit{Oak Woodlands \& Forests Fire Consortium}.
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Wonkka, C.L., Ivey, M.A., Johnson, D.J., Donovan, V.M. (2025). Fire at the fringe: Drivers of large wildfires in and near the wildland-urban interface of the eastern United States. \textit{Ecological Society of America}.
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Wonkka, C.L., Ivey, M.A., Johnson, D.J., Donovan, V.M. (2025). Key drivers of large wildfires in and near the eastern United States wildland-urban interface. \textit{University of Florida Office of Graduate Professional Development Graduate Student Research Day}.
+\end{pubitem}
+
+\begin{pubitem}
+Donovan, V.M., Crandall, R.M., Fill, J.M., Ivey, M.A., \textbf{Weidig, N.C.}, Wonkka, C.L. (2024). Changing Large Wildfire Risk in the Southeastern U.S.. \textit{Gulf of Mexico Conference}. \href{https://gulfofamericaalliance.org/wp-content/uploads/2024/02/GOMCON-Schedule-of-Concurrent-Sessions-02.14.24.pdf}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Carl, N., Shows, C., McKeithen, J., \textbf{Weidig, N.C.}, Donovan, V.M. (2024). Rumble in the Cogongrass Jungle: Shrub Resiliency from Round 1. \textit{Gulf of Mexico Conference}. \href{https://gulfofamericaalliance.org/wp-content/uploads/2024/02/GOMCON-Poster-Session-Floor-Plan-02.13.24.pdf}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Wonkka, C.L., Ivey, M.A., Donovan, V.M. (2024). Large Wildfire Patterns in the Wildland-Urban Interface of the Eastern U.S.. \textit{International Association for Landscape Ecology - North America Annual Conference}. \href{https://www.ialena.org/program-2024.html}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.} (2024). R Markdown: A Reproducible Workflow. \textit{University of Florida West Florida Research and Education Center Invited Seminar}.
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Wonkka, C.L., Ivey, M.A., Donovan, V.M. (2024). Changing Large Wildfire Patterns in the Eastern United States Wildland-Urban Interface. \textit{Northwest Florida Association of Environmental Practitioners Symposium}.
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Niang, D., Williams, M., Porema, K., Palumbo, J., Weyrich, A., Smyth, S., \ldots{} (2022). Inflammation mediated reprogramming of platelets following transcatheter aortic valve replacement. \textit{International Society for Applied Cardiovascular Biology Biennial Meeting}.
+\end{pubitem}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Miller, A.L., Parker, A.T. (2021). The Goldilocks principle: Finding the balance between water volume and nutrients for ovipositing Culex mosquitoes (Diptera: Culicidae). \textit{Northern Kentucky University Heather Bullen Research Celebration}.
+\end{pubitem}
+
+
+
+
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Webinars \& Invited Talks}}
+\vspace{2pt}
+
+\begin{pubitem}
+\textbf{Weidig, N.C.}, Wonkka, C.L., Ivey, M.A., Johnson, D.J., Donovan, V.M. (2025). Burning Boundaries: Large Wildfire Patterns and Drivers in the Eastern United States Wildland-Urban Interface. \textit{Southern Fire Exchange}. \href{https://www.youtube.com/watch?v=HdklLrpJKkM}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Donovan, V.M., Crandall, R.M., Fill, J.M., Ivey, M.A., \textbf{Weidig, N.C.}, Wonkka, C.L. (2025). Changing large wildfire regime dynamics in the eastern United States. \textit{Oak Woodlands \& Forests Fire Consortium}. \href{https://vimeo.com/1125882277}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Donovan, V.M., Crandall, R.M., Fill, J.M., Ivey, M.A., \textbf{Weidig, N.C.}, Wonkka, C.L. (2024). Increasing Large Wildfires in the Eastern United States. \textit{Southern Fire Exchange}. \href{https://www.youtube.com/watch?v=vdZSXsaz7c0}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+
+
+
+
+
+
+
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Media Coverage}}
+\vspace{2pt}
+
+\begin{pubitem}
+Georgia blaze shows how climate change has led to more wildfires in the East. \textit{Associated Press}, 2026. \href{https://apnews.com/article/wildfire-georgia-east-west-climate-change-helene-9dff2248c09a709c0d03053378210722}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Changing Large Wildfire Dynamics in the Wildland–Urban Interface of the Eastern United States: Research Brief. \textit{Fire Lines}, 2025. \href{https://mailchi.mp/southernfireexchange/fire-lines-volume-14-issue-9436916}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Woody Cover Fuels Large Wildfire Risk in the Eastern U.S.. \textit{Oak Woodlands \& Forests Fire Consortium}, 2025. \href{https://oakfirescience.com/research-brief/woody-cover-fuels-large-wildfire-risk-in-the-eastern-u-s/}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+\begin{pubitem}
+Wildfire surges in East, Southeast US fueled by new trees and shrubs. \textit{AGU News}, 2024. \href{https://news.agu.org/press-release/shrub-growth-fuels-eastern-wildfires/}{\textcolor{accent}{\small [link]}}
+\end{pubitem}
+
+
+
+%% ── Awards & Honors ───────────────────────────────────────────────────────────
+\section{Awards \& Honors}
+
+\begin{tabular}{@{}>{\small\color{muted}}r@{\hspace{0.8em}}p{\linewidth - 2.4cm}@{}}
+
+  2026 &
+  \textbf{Outstanding Thesis in Natural Resources}\enspace\textcolor{mid}{\small University of Florida, College of Agricultural \& Life Sciences}\newline\textcolor{muted}{\footnotesize 2025 Academic Year} \\
+  & \\
+
+  2026 &
+  \textbf{Outstanding Thesis in Forest Resources \& Conservation}\enspace\textcolor{mid}{\small University of Florida, School of Forest, Fisheries, \& Geomatic Sciences}\newline\textcolor{muted}{\footnotesize 2025 Academic Year} \\
+  & \\
+
+  2025 &
+  \textbf{Outstanding Teaching Assistant of the Year}\enspace\textcolor{mid}{\small University of Florida, School of Forest, Fisheries, \& Geomatic Sciences}\newline\textcolor{muted}{\footnotesize 2024 Academic Year} \\
+  & \\
+
+  2025 &
+  \textbf{Best Student Presentation}\enspace\textcolor{mid}{\small International Association of Landscape Ecology - North America}\newline\textcolor{muted}{\footnotesize \$300} \\
+  & \\
+
+  2025 &
+  \textbf{BioLEAPS Travel Grant}\enspace\textcolor{mid}{\small International Association of Landscape Ecology - North America}\newline\textcolor{muted}{\footnotesize \$1,650} \\
+  & \\
+
+  2025 &
+  \textbf{Student Travel Grant}\enspace\textcolor{mid}{\small International Association of Landscape Ecology - North America}\newline\textcolor{muted}{\footnotesize \$850} \\
+  & \\
+
+  2024 &
+  \textbf{Doris and Earl Lowe and Verna Lowe Scholarship}\enspace\textcolor{mid}{\small University of Florida, College of Agricultural \& Life Sciences}\newline\textcolor{muted}{\footnotesize \$2,000} \\
+  & \\
+
+  2024 &
+  \textbf{IFAS Travel Grant}\enspace\textcolor{mid}{\small University of Florida, Institute of Food \& Agricultural Sciences}\newline\textcolor{muted}{\footnotesize \$250} \\
+  & \\
+
+  2023 &
+  \textbf{Graduate Research Assistantship}\enspace\textcolor{mid}{\small University of Florida, College of Agricultural \& Life Sciences}\newline\textcolor{muted}{\footnotesize \$27,500 annually for two years} \\
+  & \\
+
+  2022 &
+  \textbf{Outstanding Graduate in Biology}\enspace\textcolor{mid}{\small Northern Kentucky University, Department of Biological Sciences}\newline\textcolor{muted}{\footnotesize \$250} \\
+  & \\
+
+  2018 &
+  \textbf{President's List Awardee}\enspace\textcolor{mid}{\small Northern Kentucky University}\newline\textcolor{muted}{\footnotesize 4.00 GPA · 2018–2022} \\
+  & \\
+
+  2021 &
+  \textbf{1st Place, Undergraduate Student Poster Competition}\enspace\textcolor{mid}{\small Entomological Society of America}\newline\textcolor{muted}{\footnotesize \$75} \\
+  & \\
+
+  2020 &
+  \textbf{Dr. Carol Swarts Milburn Research Fellowship}\enspace\textcolor{mid}{\small Northern Kentucky University}\newline\textcolor{muted}{\footnotesize \$3,500} \\
+  & \\
+
+\end{tabular}
+
+%% ── Skills ────────────────────────────────────────────────────────────────────
+\section{Technical Skills}
+\textbf{Research interests:} {\small\color{mid} Applied AI, Geospatial Analytics, Spatial Data Science, Data Visualization, Statistical Modeling, Machine Learning, Bayesian Analysis, Remote Sensing, Reproducible Research, Data Storytelling, Quantitative Ecology, Forecasting, Land Use Change, Social-Ecological Systems}
+
+\smallskip
+\textbf{Development:} {\small\color{mid} R, Python, GEE, ArcGIS}\\
+
+%% ── Footer ────────────────────────────────────────────────────────────────────
+\vfill
+{\centering\footnotesize\color{muted} Last updated 2026-05-28 \par}
+
+\end{document}
