@@ -1,0 +1,241 @@
+%% Noah C. Weidig — Curriculum Vitae
+%% Auto-generated <{ updated }>  •  do not edit by hand
+\documentclass[10pt,letterpaper]{article}
+
+%% ── Page geometry ─────────────────────────────────────────────────────────────
+\usepackage[top=0.80in, bottom=0.80in, left=0.90in, right=0.90in]{geometry}
+
+%% ── Fonts (XeLaTeX) ───────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+
+%% ── Colors ────────────────────────────────────────────────────────────────────
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1a6b5a}
+\definecolor{dark}{HTML}{1e1e1e}
+\definecolor{mid}{HTML}{444444}
+\definecolor{muted}{HTML}{777777}
+
+%% ── Hyperlinks ────────────────────────────────────────────────────────────────
+\usepackage[colorlinks=true, urlcolor=accent, linkcolor=accent, hidelinks]{hyperref}
+
+%% ── Core packages ─────────────────────────────────────────────────────────────
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{hanging}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{calc}
+
+%% ── Section formatting ────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\normalsize\bfseries\sffamily\color{accent}\uppercase\ls{60}}
+  {}{0pt}{}
+  [{\vspace{1pt}\color{accent}\hrule height 0.5pt\vspace{5pt}}]
+\titlespacing*{\section}{0pt}{16pt}{4pt}
+
+%% Letter-spacing helper (requires microtype)
+\newcommand{\ls}[1]{\addfontfeature{LetterSpace=#1}}
+
+%% ── List settings ─────────────────────────────────────────────────────────────
+\setlist{nosep, leftmargin=1.4em, topsep=2pt}
+
+%% ── Misc helpers ──────────────────────────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+%% Date range helper: prints "Start -- End" or "Start -- present"
+\newcommand{\daterange}[2]{%
+  \textcolor{muted}{\small #1\ifx&#2&\relax\else{} -- #2\fi}%
+}
+
+%% Entry heading macro
+%  #1 = bold title   #2 = organisation   #3 = date range   #4 = location
+\newcommand{\entryhead}[4]{%
+  {\textbf{#1}}\enspace\textcolor{mid}{#2}%
+  \hfill\daterange{#3}{#4}%
+}
+
+%% Publication entry (hanging indent)
+\newenvironment{pubitem}{%
+  \begin{hangparas}{1.2em}{1}%
+  \setlength{\parskip}{3pt}%
+}{\end{hangparas}\medskip}
+
+%% ═══════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+%% ── Header ────────────────────────────────────────────────────────────────────
+\begin{center}
+  {\fontsize{26}{30}\selectfont\bfseries\sffamily\color{dark}
+    <{ me.name.given | tex }> \textcolor{accent}{<{ me.name.family | tex }>}}
+
+  \smallskip
+  {\color{mid}\sffamily <{ me.role | tex }>}
+
+  \smallskip
+  {\small\color{mid}
+    \href{mailto:<{ me.email }>}{<{ me.email | tex }>}%
+<<- if me.links is defined >>
+<< for lk in me.links ->>
+<< if 'orcid' in lk.url or 'scholar' in lk.url or 'github' in lk.url or 'linkedin' in lk.url ->>
+    \enspace\textcolor{muted}{|}
+    \enspace\href{<{ lk.url }>}{\textcolor{muted}{\footnotesize <{ lk.url | replace('https://','') | replace('www.','') | truncate(40,true,'…') | tex }>}}%
+<< endif ->>
+<<- endfor >>
+<<- endif >>}
+
+\end{center}
+
+\vspace{4pt}
+\noindent{\color{accent!30}\hrule height 1pt}
+\vspace{10pt}
+
+%% ── Education ─────────────────────────────────────────────────────────────────
+\section{Education}
+
+<< for ed in me.education >>
+\entryhead%
+  {<{ ed.degree | tex }>}%
+  {\textnormal{\textcolor{mid}{--- <{ ed.institution | tex }>}}}%
+  {<{ ed.start | fmt_date }>}%
+  {<{ ed.end | fmt_date if ed.end is defined else '' }>}\\
+\textcolor{mid}{\small <{ ed.summary | trim | tex }>}
+
+\medskip
+<< endfor >>
+
+%% ── Experience ────────────────────────────────────────────────────────────────
+\section{Research \& Professional Experience}
+
+<< for ex in me.experience >>
+\entryhead%
+  {<{ ex.role | tex }>}%
+  {\textnormal{\textcolor{mid}{--- <{ ex.org | tex }>}}}%
+  {<{ ex.start | fmt_date }>}%
+  {<{ ex.end | fmt_date if ex.end is defined else '' }>}\\
+\textcolor{mid}{\small <{ ex.summary | trim | tex }>}
+
+\medskip
+<< endfor >>
+
+%% ── Publications ──────────────────────────────────────────────────────────────
+\section{Publications \& Presentations}
+
+<< if pubs.journal >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Peer-Reviewed Journal Articles}}
+\vspace{2pt}
+<< for p in pubs.journal >>
+\begin{pubitem}
+<{ p.authors }> (<{ p.year }>). <{ p.title | tex }>.<< if p.journal >> \textit{<{ p.journal | tex }>}<< if p.volume >>, \textit{<{ p.volume | tex }>}<< if p.issue >>(<{ p.issue | tex }>)<< endif >><< endif >><< if p.pages >>, <{ p.pages | tex }><< endif >>.<< endif >><< if p.doi >> \href{https://doi.org/<{ p.doi }>}{\textcolor{accent}{\small doi:<{ p.doi | tex }>}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+<< if pubs.preprint >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Preprints}}
+\vspace{2pt}
+<< for p in pubs.preprint >>
+\begin{pubitem}
+<{ p.authors }> (<{ p.year }>). <{ p.title | tex }>.<< if p.journal >> \textit{<{ p.journal | tex }>}.<< endif >><< if p.url >> \href{<{ p.url }>}{\textcolor{accent}{\small [link]}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+<< if pubs.thesis >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Theses}}
+\vspace{2pt}
+<< for p in pubs.thesis >>
+\begin{pubitem}
+<{ p.authors }> (<{ p.year }>). \textit{<{ p.title | tex }>}.<< if p.journal >> <{ p.journal | tex }>.<< endif >><< if p.url >> \href{<{ p.url }>}{\textcolor{accent}{\small [link]}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+<< if pubs.talk >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Conference Papers \& Presentations}}
+\vspace{2pt}
+<< for p in pubs.talk >>
+\begin{pubitem}
+<{ p.authors }> (<{ p.year }>). <{ p.title | tex }>.<< if p.journal >> \textit{<{ p.journal | tex }>}.<< endif >><< if p.url >> \href{<{ p.url }>}{\textcolor{accent}{\small [link]}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+<< if pubs.webinar >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Webinars \& Invited Talks}}
+\vspace{2pt}
+<< for p in pubs.webinar >>
+\begin{pubitem}
+<{ p.authors }> (<{ p.year }>). <{ p.title | tex }>.<< if p.journal >> \textit{<{ p.journal | tex }>}.<< endif >><< if p.url >> \href{<{ p.url }>}{\textcolor{accent}{\small [link]}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+<< if pubs.report >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Reports}}
+\vspace{2pt}
+<< for p in pubs.report >>
+\begin{pubitem}
+<{ p.authors }> (<{ p.year }>). <{ p.title | tex }>.<< if p.journal >> \textit{<{ p.journal | tex }>}.<< endif >><< if p.url >> \href{<{ p.url }>}{\textcolor{accent}{\small [link]}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+<< if pubs.chapter >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Book Chapters}}
+\vspace{2pt}
+<< for p in pubs.chapter >>
+\begin{pubitem}
+<{ p.authors }> (<{ p.year }>). <{ p.title | tex }>. In \textit{<{ p.journal | tex }>}.<< if p.pages >> pp.~<{ p.pages | tex }>.<< endif >><< if p.doi >> \href{https://doi.org/<{ p.doi }>}{\textcolor{accent}{\small doi:<{ p.doi | tex }>}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+<< if pubs.media >>
+\subsection*{\textcolor{mid}{\small\sffamily\bfseries Media Coverage}}
+\vspace{2pt}
+<< for p in pubs.media >>
+\begin{pubitem}
+<{ p.title | tex }>.<< if p.journal >> \textit{<{ p.journal | tex }>}, <{ p.year }>.<< endif >><< if p.url >> \href{<{ p.url }>}{\textcolor{accent}{\small [link]}}<< endif >>
+\end{pubitem}
+<< endfor >>
+<< endif >>
+
+%% ── Awards & Honors ───────────────────────────────────────────────────────────
+\section{Awards \& Honors}
+
+\begin{tabular}{@{}>{\small\color{muted}}r@{\hspace{0.8em}}p{\linewidth - 2.4cm}@{}}
+<< for aw in me.awards >>
+  <{ aw.date[:4] if aw.date is defined else '' }> &
+  \textbf{<{ aw.title | tex }>}\enspace\textcolor{mid}{\small <{ aw.awarder | tex }>}<< if aw.summary is defined and aw.summary >>\newline\textcolor{muted}{\footnotesize <{ aw.summary | tex }>}<< endif >> \\
+  & \\
+<< endfor >>
+\end{tabular}
+
+%% ── Skills ────────────────────────────────────────────────────────────────────
+\section{Technical Skills}
+
+<<- if me.interests is defined >>
+\textbf{Research interests:} {\small\color{mid} <{ me.interests | join(', ') | tex }>}
+
+\smallskip
+<<- endif >>
+
+<<- if me.skills is defined >>
+<<- for cat in me.skills >>
+\textbf{<{ cat.name | tex }>:} {\small\color{mid} <{ cat.items | map(attribute='label') | join(', ') | tex }>}\\
+<<- endfor >>
+<<- endif >>
+
+%% ── Footer ────────────────────────────────────────────────────────────────────
+\vfill
+{\centering\footnotesize\color{muted} Last updated <{ updated }> \par}
+
+\end{document}
