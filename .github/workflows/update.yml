@@ -36,7 +36,8 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive-xetex \
             texlive-latex-extra \
-            texlive-fonts-recommended
+            texlive-fonts-recommended \
+            fonts-texgyre
 
       - name: Fetch data & render template
         run: python scripts/build.py
