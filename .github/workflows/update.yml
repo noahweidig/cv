@@ -37,6 +37,7 @@ jobs:
             texlive-xetex \
             texlive-latex-extra \
             texlive-fonts-recommended \
+            texlive-fonts-extra \
             fonts-texgyre
 
       - name: Fetch data & render template
