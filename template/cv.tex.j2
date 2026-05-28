@@ -22,6 +22,7 @@
 
 %% ── Core packages ─────────────────────────────────────────────────────────────
 \usepackage{microtype}
+\usepackage{fontawesome5}
 \usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -73,7 +74,7 @@
 
 %% ── Header ────────────────────────────────────────────────────────────────────
 \begin{center}
-  {\fontsize{26}{30}\selectfont\bfseries\sffamily\color{dark}
+  {\fontsize{26}{30}\selectfont\bfseries\color{dark}
     <{ me.name.given | tex }> \textcolor{accent}{<{ me.name.family | tex }>}}
 
   \smallskip
@@ -84,9 +85,9 @@
     \href{mailto:<{ me.email }>}{<{ me.email | tex }>}%
 <<- if me.links is defined >>
 << for lk in me.links ->>
-<< if 'orcid' in lk.url or 'scholar' in lk.url or 'github' in lk.url or 'linkedin' in lk.url ->>
-    \enspace\textcolor{muted}{|}
-    \enspace\href{<{ lk.url }>}{\textcolor{muted}{\footnotesize <{ lk.url | replace('https://','') | replace('www.','') | truncate(40,true,'…') | tex }>}}%
+<< if 'github' in lk.url or 'linkedin' in lk.url or 'orcid' in lk.url or 'scholar' in lk.url ->>
+    \enspace\href{<{ lk.url }>}{\textcolor{mid}{\small%
+<< if 'github' in lk.url >>\faGithub<< elif 'linkedin' in lk.url >>\faLinkedinIn<< elif 'orcid' in lk.url >>\faOrcid<< elif 'scholar' in lk.url >>\faGraduationCap<< endif >>}}%
 << endif ->>
 <<- endfor >>
 <<- endif >>}
@@ -211,6 +212,7 @@
 %% ── Awards & Honors ───────────────────────────────────────────────────────────
 \section{Awards \& Honors}
 
+\nopagebreak
 \begin{tabular}{@{}>{\small\color{muted}}r@{\hspace{0.8em}}p{\linewidth - 2.4cm}@{}}
 << for aw in me.awards >>
   <{ aw.date[:4] if aw.date is defined else '' }> &
