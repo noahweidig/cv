@@ -48,10 +48,10 @@ jobs:
           xelatex -interaction=nonstopmode -halt-on-error cv.tex
           xelatex -interaction=nonstopmode -halt-on-error cv.tex
 
-      - name: Move PDF to output/
+      - name: Move PDF to docs/
         run: |
-          mkdir -p output
-          cp cv.pdf output/cv.pdf
+          mkdir -p docs
+          cp cv.pdf docs/cv.pdf
 
       - name: Commit & push if changed
         run: |
