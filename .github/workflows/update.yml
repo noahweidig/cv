@@ -57,8 +57,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/cv.pdf
-          git add output/cv.tex
+          git add docs/cv.pdf cv.tex
           git diff --cached --quiet && echo "No changes." && exit 0
           git commit -m "auto: rebuild CV $(date -u +%Y-%m-%d)"
           git push
